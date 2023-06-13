@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styleCalculadora.css">
+    <link rel="icon" href="./logo.png">
+    <title>Calculadora</title>
+
+    <!-- Favicons -->
+    <link href="./../images/logo.png" rel="icon">
+    <link href="./../images/logo.png" rel="apple-touch-icon">
+</head>
+
+<body id="body-calculadora">
+    <header id="header" class="fixed-top  header-transparent ">
+        <div class="container d-flex align-items-center justify-content-between">
+    
+            <a href="./../index.html" class="navbar-brand">
+     
+              </a>
+    
+    <div class="seta-voltar">
+     <a href="../pages/documentaçao.html"> <img src="../images/seta-branca.png" alt=""></a>  
+    </div>
+        </div>
+      </header><!-- End Header -->
+    
+    <div class="container">        
+        <section class="autonomoSection">
+            <table class="tabela1" onclick="calcular()">
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td class="tableTitle" colspan="3">Auto</td>
+                </tr>
+                <tr>
+                    <td class="text">Mission</td>
+                    <td class="text">Qty</td>
+                    <td class="text">Subtotal</td>
+                </tr>
+
+                </tr>
+                <tr>
+                    <td class="text">How many cubes or cones are scored on a bottom ROW?</td>
+                    <td class="text"><input class="text" id="qt1" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub1">0</td>
+                </tr>
+                <tr>
+                    <td class="text">How many cubes or cones are scored on a middle ROW?</td>
+                    <td class="text"><input class="text" id="qt2" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub2">0</td>
+                </tr>
+                <tr>
+                    <td class="text">How many cubes or cones are scored on a top ROW?</td>
+                    <td class="text"><input class="text" id="qt3" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub3">0</td>
+                </tr>
+
+                <tr>
+                    <td class="text">How many robots docked and not engaged?</td>
+                    <td class="text"><input class="text" id="qt4" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub4">0</td>
+                </tr>
+                <tr>
+                    <td class="text">How many robots docked and engaged?</td>
+                    <td class="text"><input class="text" id="qt5" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub5">0</td>
+                </tr>
+                <tr>
+                    <td class="text">Robots whose bumbers have completely left its community?</td>
+                    <td class="text"><input class="text" id="qt6" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub10">0</td>
+                </tr>
+              
+                <tr class="nao-quero">
+                    <td class="text">Colocou o objeto no Nivel Baixo:</td>
+                    <td class="text"><input class="text" value="Não" type="button" id="nao2"></td>
+                    <td class="text" id="sub7">0</td>
+                </tr>
+                <tr class="nao-quero">
+                    <td class="text">Colocou o objeto no Nivel Médio:</td>
+                    <td class="text"><input class="text" value="Não" type="button" id="nao3"></td>
+                    <td class="text" id="sub8">0</td>
+                </tr>
+                <tr class="nao-quero">
+                    <td class="text">Colocou o objeto no Nivel Alto:</td>
+                    <td class="text"><input class="text" value="Não" type="button" id="nao4"></td>
+                    <td class="text" id="sub9">0</td>
+                </tr>
+
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td colspan="1" class="tableTitle">Total Score:</td>
+                    <td colspan="2" id="resultado">0</td>
+                </tr>
+            </table>
+
+
+
+        </section>
+
+        <section class="teleoperado">
+            <table onclick="calcularA()" class="tabela1">
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td colspan="3" class="tableTitle">Teleoperated</td>
+                </tr>
+                <tr>
+                    <td class="text">Mission </td>
+                    <td class="text">Qty</td>
+                    <td class="text">Subtotal</td>
+                </tr>
+                <tr>
+                    <td class="text">How many cubes or cones are scored on a bottom ROW?</td>
+                    <td class="text"><input class="text" id="qt1a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub1a">0</td>
+                </tr>
+                <tr>
+                    <td class="text">How many cubes or cones are scored on a middle ROW?</td>
+                    <td class="text"><input class="text" id="qt2a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub2a">0</td>
+                </tr>
+                <tr>
+                    <td class="text">How many cubes or cones are scored on a top ROW?</td>
+                    <td class="text"><input class="text" id="qt3a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub3a">0</td>
+
+                </tr>
+
+                <tr>
+                    <td class="text">How many Links the alliance made?</td>
+                    <td class="text"><input class="text" id="qt4a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub4a">0</td>
+
+                </tr>
+
+                <tr>
+                    <td class="text">Robots whose bumpers are completely contained within its community, but are not docked on the Charge Station:</td>
+                    <td class="text"><input class="text" id="qt5a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub5a" class="numero-sub">0</td>
+                </tr>
+               
+                <tr>
+                    <td class="text">How many robots docked and not engaged?</td>
+                    <td class="text"><input class="text" id="qt6a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub6a" >0</td>
+                </tr>
+                <tr>
+                    <td class="text">How many robots docked and engaged?</td>
+                    <td class="text"><input class="text" id="qt7a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub7a" class="numero-sub">0</td>
+                </tr>
+
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td colspan="2" class="tableTitle"> Total Score:</td>
+                    <td id="resultadoA">0</td>
+                </tr>
+            </table>
+
+        </section>
+        <section class="retaFinal">
+            <table class="tabela1" onclick="calcularB()">
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td colspan="3" class="tableTitle">Penalties</td>
+                </tr>
+                <tr>
+                    <td class="text">Mission </td>
+                    <td class="text">Qty</td>
+                    <td class="text">Subtotal</td>
+                </tr>
+
+                <tr>
+                    <td class="text">Number of fouls committed:</td>
+                    <td class="text"><input class="text" id="qt8a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub8a">0</td>
+                </tr>
+                <tr>
+                    <td class="text">Number of Tech Foul committed:</td>
+                    <td class="text"><input class="text" id="qt9a" type="number" min="0" max="50" value="0"></td>
+                    <td class="text" id="sub9a">0</td>
+                </tr>
+
+
+                <tr class="nao-quero">
+                    <td class="text">Domínio da Junção através do último cone
+                        colocados sobre os outros:
+                    </td>
+                    <td class="text">
+                        <input class="text" value="Não" type="button" id="nao1b">
+                    </td>
+                    <td class="text" id="sub1b">0</td>
+                </tr>
+                <tr class="nao-quero">
+                    <td class="text">Domínio da Junção através de um
+                        Sinalizador de Equipe:</td>
+                    <td class="text">
+                        <input class="text" value="Não" type="button" id="nao2b">
+                    </td>
+                    <td class="text" id="sub2b">0</td>
+                </tr>
+                <tr class="nao-quero">
+                    <td class="text">Circuito completo:</td>
+                    <td class="text">
+                        <input class="text" value="Não" type="button" id="nao3b">
+                    </td>
+                    <td class="text" id="sub3b">0</td>
+                </tr>
+                <tr class="nao-quero">
+                    <td class="text">
+                        Robô estacionado dentro de qualquer um dos
+                        Terminais da Aliança:</td>
+                    <td class="text">
+                        <input class="text" value="Não" type="button" id="nao4b">
+                    </td>
+                    <td class="text" id="sub4b">0</td>
+                </tr>
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td colspan="2" class="tableTitle">Total Score:</td>
+                    <td id="resultadoB">0</td>
+                </tr>
+
+                
+            </table>
+
+            <table class="tabela1" onclick="calcularC()">
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td colspan="2" class="tableTitle">Bonus Score</td>
+                </tr>
+                <tr>
+                    <td class="text">Mission </td>
+                    <td class="text">Qty</td>
+                </tr>
+                <tr>
+                    <td class="text">Number of cubes and cones scored on Coopertition Grid:</td>
+                    <td class="text"><input class="text" id="qt7" type="number" min="0" max="50" value="0"></td>
+                </tr>
+                <tr>
+                    <td class="text">Number of Links the alliance made:</td>
+                    <td class="text"><input class="text" id="qt8" type="number" min="0" max="50" value="0"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="text">Number of cubes and cones scored at all:</td>
+                    <td class="text"><input class="text" id="qt9" type="number" min="0" max="50" value="0"></td>
+                    
+                </tr>
+                <tr>
+                    <td class="text">Did your alliance tie the match?</td>
+                    <td class="text">
+                        <input class="text" value="No" type="button" id="nao9">
+                    </td>
+                    <td class="nao-quero" class="text" id="#sub16">0</td>
+                </tr>
+                <tr>
+                    <td class="text">Did your alliance win the match?</td>
+                    <td class="text">
+                        <input class="text" value="No" type="button" id="nao10">
+                    </td>
+                    <td class="nao-quero" class="text" id="#sub17">0</td>
+                </tr>
+                <tr class="titleChangeColor" style="background-color:#ed7d31 ;">
+                    <td class="tableTitle">Ranking Points:</td>
+                    <td id="resultadoC">0</td>
+                </tr>
+                
+            </table>
+
+            <table class="tabela1" onclick="calcularPontuacao()">
+                <tr class="titleChangeColor">
+                    <td colspan="2" class="tableTitle">Overall Round Score:</td>
+                    <td id="resultadoGeral">0</td>
+                </tr>
+            </table>
+
+        </section>
+       
+
+    </div>
+
+    <script src="../assets/js/mainCalculadoraIn.js"></script>
+</body>
+
+</html>
